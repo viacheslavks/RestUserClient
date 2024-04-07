@@ -9,6 +9,11 @@ public class RestClient {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyConfig.class);
 
         Communication communication = context.getBean("communication", Communication.class);
+        String users = communication.getAllUsers();
+        communication.saveUser();
+        communication.updateUser();
+        communication.deleteUser();
+        communication.print();
 
 
     }
