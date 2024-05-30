@@ -1,6 +1,6 @@
 package ru.restuserclient.project.Model;
 
-public record TagResponseDto(
+public record TagResponseDTO(
         Long id,
 
         String name,

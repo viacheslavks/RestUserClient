@@ -1,7 +1,10 @@
 package ru.restuserclient.project;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import ru.restuserclient.project.Model.TagResponseDTO;
 import ru.restuserclient.project.configuration.MyConfig;
+
+import java.util.List;
 
 public class RestClient {
 
@@ -14,8 +17,19 @@ public class RestClient {
 //        communication.updateUser();
 //        communication.deleteUser();
 //        communication.print();
+//
+        Long accountId = 2L;
+        List<TagResponseDTO> tags =communication.getTop3TagsByAccountId(accountId);
+        tags.forEach(tag -> System.out.println("Tag: " + tag));
 
-        String question = communication.sendQuestionDto();
+        String Tag = communication.getTop3TagsByAccountId1(accountId);
+        System.out.println(Tag);
+
+//        context.close();
+//        String question = communication.sendQuestionDto();
+//        System.out.println(question);
+//        String questionTwo = communication.sendQuestionDtos();
+//        System.out.println(questionTwo);
 
     }
 }
